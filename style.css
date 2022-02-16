@@ -1,0 +1,400 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --navblue-color: rgb(0,0,65);
+    --showblue-color: rgb(2,2,95);
+    --offwhite-color: #f8f8ff;
+}
+
+body {
+    font-family: sans-serif;
+    color: rgb(206, 218, 248);
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.arabicswtch {
+    font-size: 13px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(237, 241, 252);
+}
+
+h1, h2 {
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+/* Navbar */
+.navbar {
+    background-color: rgb(0, 0, 65);
+    color: rgb(237, 241, 252);
+    height: 100px;
+    z-index: 1;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #f8f8ff;
+}
+
+
+.navbar a {
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px rgb(206, 218, 248) solid;
+}
+
+.navbar .logo a:hover, .navbar .arabicswtch a:hover {
+    border-bottom: 0px rgb(206, 218, 248) solid;
+}
+
+.navbar .flex {
+    justify-content: space-between;
+
+}
+
+/* Showcase */
+    .showcase {
+        height: 400px;
+        background-color: rgb(2, 2, 95);
+        background-image: url(/Images/medypad-body.jpg);
+        background-position: center;
+        color: #f8f8ff;
+        /* position: relative; */
+    }
+
+    .showcase h1 {
+        font-size: 40px;
+        
+    }
+    
+    .showcase p {
+        margin: 20px 0;
+    }
+
+
+    .showcase .grid {
+        overflow: visible;
+        grid-template-columns: 55% 45%;
+        gap: 30px;
+    }
+
+    .showcase-form {
+        position: relative;
+        top: 60px;
+        height: 350px;
+        width: 400px;
+        padding: 40px;
+        z-index: 100;
+        justify-self: flex-end;
+    }
+    
+    .showcase-form .form-control {
+        margin: 30px 0;
+    }
+
+    .showcase-form input[type='text'],
+    .showcase-form input[type='email'],
+    .showcase-form input[type='password']{
+        border: 0;
+        border-bottom: 1px solid #b4becb;
+        background-color: rgb(237, 241, 252);
+        width: 100%;
+        padding: 3px;
+        font-size: 16px;
+    }
+
+    .showcase-form input:focus {
+        outline: none;
+    }
+
+    .showcase::before,
+    .showcase::after {
+        content: '';
+        /* position: absolute; */
+        height: 100px;
+        bottom: -70px;
+        right: 0px;
+        left: 0px;
+        background-color: rgb(179, 18, 18);
+    }
+
+    .stats {
+        padding-top: 50px;
+        color: rgb(3, 0, 51);
+        background-color: var(--offwhite-color);
+    }
+
+    .stats .grid h3 {
+        font-size: 30px;
+    }
+    
+/* AskDoc */
+    .askdoc .grid {
+        grid-template-columns: 4fr 3fr;
+    }
+
+    .askdoc {
+        background-image: url(/Images/doc.jpeg);
+        /* background-color: var(--offwhite-color); */
+    }
+
+    .askdoc h2 {
+        color: #f8f8ff;
+    }
+
+    .askdoc p {
+        color: #f8f8ff;
+    }
+
+/* Services */
+    .services-head img {
+        width: 300px;
+        justify-self: flex-end;
+    }
+
+    .services-main .card > i {
+        margin-right: 20px;
+    }
+
+
+/* Askdocs Page */
+.docs-head img {
+    width: 300px;
+    justify-self: flex-end;
+}
+
+.card nav a {
+    color:rgb(0, 0, 65)
+}
+
+.services-main .card > i {
+    margin-right: 20px;
+}
+
+.docs-main h3 {
+    margin: 20px 0;
+}
+
+.docs-main .grid {
+     grid-template-columns: 1fr 2fr;
+     align-items: flex-start;
+}
+
+.docs-main nav li {
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px #ccc solid;
+}
+
+.docs-main a:hover {
+    font-weight: bold;
+}
+
+.symbot-bg {
+    background-color: var(--offwhite-color);
+}
+
+.symbot {
+
+    /* padding-left: 50vh;
+    padding-right: 50vh; */
+    padding-top: 100px;
+}
+
+.covtracka {
+    color: var(--navblue-color);
+}
+
+.covtrack {
+    justify-content: center;
+    align-items: center;
+}
+
+.docs-main {
+    background-image: url(/Images/askdoc2.jpeg);
+}
+
+.services-main a:hover {
+    font-weight: bold;
+}
+
+
+/* Footer */
+    footer {
+        background-color: var(--navblue-color);
+        padding-top: 30px;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+    footer h1 {
+        font-size: 15px;
+        color: rgb(206, 218, 248);
+    }
+    
+    footer p {
+        font-size: 15px;
+    }
+
+
+
+
+
+
+
+
+
+
+/* Tablets & Under */
+@media(max-width: 844px) {
+    .grid,
+    .showcase .grid,
+    .askdoc .grid,
+    .services-main .grid,
+    .docs-main .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase {
+        height: auto;
+    }
+    .showcase-text {
+        margin-top: 40px;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .showcase-form {
+        justify-self: center;
+        margin: auto;
+        height: 300px;
+        width: 350px;
+    }
+
+    .services-head,
+    .services-sub-head,
+    .docs-head {
+        text-align: center;
+        
+    }
+
+    .symbot {
+        height: 500px;
+        width: 390px;
+    }
+
+    
+}
+
+
+
+
+
+/* Mobile */
+@media(max-width: 500px) {
+    .navbar {
+        height: 110px;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 90px;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgb(0, 0, 65);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        position: absolute;
+
+    }
+
+    .nav-item {
+        margin:  16px 0;
+    }
+
+    .nav-menu.active {
+         left: 0;
+
+    }
+
+     
+     .showcase h1 {
+         font-size: 37px;
+     }
+
+     .stats .grid {
+         font-size: 14px;
+         flex-direction: column;
+     }
+     
+     .askdoc h2 {
+        font-size: 37px;
+        padding-top: 30px;
+     }
+
+     .askdoc p {
+         font-size: 16px;
+     }
+
+     .askdoc img {
+         background-repeat: none;
+     }
+
+     
+}
+
+
+  
+  
