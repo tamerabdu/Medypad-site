@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utilities.css">
+    
+    <title>Medypad | Healthcare For Everyone</title>
+</head>
+
+<body>
+
+    <!--NAVBAR-->
+    <div class="navbar">
+        <div class="container flex">
+            <h1 class="logo"><a href="index-ar.html" class="logo">Medypad</a></h1>
+            <nav>
+                <ul class="nav-menu" id="nav-ul">
+                    <li class="nav-item"><a href="index-ar.html">الرئيسية</a></li>
+                    <li class="nav-item"><a href="services-ar.html">الخدمات</a></li>
+                    <li class="nav-item"><a href="contactus-ar.html">تواصل معنا</a></li>
+                    <li class="nav-item"><a href="index.html">EN</a></li>
+
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!--Showcase-->
+    <section class="showcase">
+        <div class="container grid">
+            <div class="showcase-text">
+                <h1>.الرعاية الصحية، متاحة للجميع</h1>
+                <p>في عصر اليوم ، يعد الوصول إلى الرعاية الصحية امتيازًا. نتعهد بجعل الرعاية الصحية في المتناول بغض النظر عمن وماذا وأين أنت.</p>
+                <a href="services.html" class="btn btn-outline">ماذا نقدم</a>
+            </div>
+            <div class="showcase-form card">
+                <h2>اشتراك</h2>
+                <form>
+                    <div class="form-control">
+                        <input type="email" name="email" placeholder="عنوان البريد الالكتروني" id="email" required>
+                    </div>
+                    <div class="form-control">
+                        <input type="password" name="password" placeholder="كلمة السر" id="psw" required>
+                    </div>
+                    <div class="form-control">
+                        <input type="password" name="retype-password" placeholder="اعادة كلمة السر" id="psw-repeat" required>
+                    </div>
+                    <input type="submit" value="اشتراك" class="btn btn-primary">
+                    
+                </form>
+            </div>
+            
+        </div>
+    </section>
+
+    <!--Stats-->
+    <section class="stats">
+        <div class="container">
+            <h3 class="stats-heading text-center my-1">
+                <!-- General Statistics -->
+            </h3>
+
+            <div class="grid grid-3 text-center my-4">
+                <div>
+                    <i class="fas fa-heartbeat fa-3x"></i>
+                        <h3>3,500,000,000</h3>
+                        <p class="text-secondary">لا يمكن تحمل تكاليف الرعاية الصحية في جميع أنحاء العالم</p> 
+                </div>
+                <div>
+                    <i class="fas fa-first-aid fa-3x"></i>
+                    <h3>11,300,000</h3>
+                    <p class="text-secondary">بحاجة إلى مساعدة صحية في سوريا</p> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Ask A Doc-->
+    <section class="askdoc">
+        <div class="container grid">
+            <div class="text-center">
+                <h2 class="lg">اسأل طبيب</h2>
+                <p class="lead my-1">استشر طبيبًا حول أي مخاوف صحية لديك مجانًا.</p>
+                <a href="services.html" class="btn btn-dark">اسأل</a>
+            </div>
+            <img src="/Images/askdocicoon.png" alt="Medical Icon">
+        </div>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p> Medypad, Copyright &copy; 2022</p>
+    </footer>
+    <script>
+        const hamburger = document.querySelector(".hamburger ")
+        const navMenu = document.querySelector(".nav-menu ")
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        })
+
+        </script>
+</body>
+</html>

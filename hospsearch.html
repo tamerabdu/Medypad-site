@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utilities.css">
+
+    
+    <title>Medypad | Healthcare For Everyone</title>
+</head>
+
+<body>
+
+    <!--NAVBAR-->
+    <div class="navbar">
+        <div class="container flex">
+            <h1 class="logo"><a href="index.html" class="logo">Medypad</a></h1>
+            <nav>
+                <ul class="nav-menu" id="nav-ul">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="services.html">Services</a></li>
+                    <li class="nav-item"><a href="askdoc.html">Ask A Doctor</a></li>
+                    <li class="nav-item"><a href="services-ar.html" class="arabicswtch">العربية</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Head -->
+    <section class="services-head bg-primary py-3">
+        <div class="container grid">
+            <div>
+                <h1 class="xl">Local Hospital Search</h1>
+                <p class="lead">
+                    Search locally for nearby hospitals.
+                </p>
+                </div>
+            <img src="/Images/servicon.png" alt="Services Icon">
+        </div>
+    </section>
+
+    <!-- Sub Head -->
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p> Medypad, Copyright &copy; 2022</p>
+    </footer>
+
+
+
+    <!-- JavaScript -->
+    <style>html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+
+<div id="map-canvas"></div>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger ")
+        const navMenu = document.querySelector(".nav-menu ")
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        })
+
+        var map;
+var infowindow;
+
+function initialize() {
+  var pyrmont = new google.maps.LatLng(35.5407, 35.7953); // sample location to start with: Latakia, Syria
+
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: pyrmont,
+    zoom: 15
+  });
+
+  var request = {
+    location: pyrmont,
+    radius: 200,
+    types: ['hospital', 'health'] // this is where you set the map to get the hospitals and health related places
+  };
+  infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
+}
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+
+</body>
+</html>
